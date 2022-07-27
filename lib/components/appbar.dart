@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:petology/components/components.dart';
 import 'package:petology/components/default_button.dart';
+import 'package:petology/view/login%20view.dart';
+import 'package:petology/view/register_view.dart';
 
 class AppBarView extends StatefulWidget {
   final bool home;
@@ -8,7 +11,7 @@ class AppBarView extends StatefulWidget {
   AppBarView({
     Key? key,
     this.home = false,
-     this.image,
+    this.image,
   }) : super(key: key);
 
   @override
@@ -99,7 +102,12 @@ class _AppBarViewState extends State<AppBarView> {
                     ),
                     Spacer(),
                     DefaultButton(
-                      onPress: () {},
+                      onPress: () {
+                        navigateTo(
+                          context,
+                          RegisterScreen(),
+                        );
+                      },
                       height: 75,
                       width: 130,
                       buttonColor: Colors.white.withOpacity(0.60),
@@ -110,7 +118,9 @@ class _AppBarViewState extends State<AppBarView> {
                     ),
                     SizedBox(width: 40.0),
                     DefaultButton(
-                      onPress: () {},
+                      onPress: () {
+                        navigateTo(context, LoginScreen());
+                      },
                       height: 75,
                       width: 130,
                       buttonColor: Colors.transparent,

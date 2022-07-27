@@ -12,7 +12,7 @@ class DefaultContainer extends StatelessWidget {
     this.bottomPad = 0.0,
     this.borderWidth = 0.0,
     this.radius = 25.0,
-     this.elevation=3.5,
+    this.elevation = 3.5,
   }) : super(key: key);
 
   final Widget? child;
@@ -29,7 +29,7 @@ class DefaultContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation:elevation,
+      elevation: elevation,
       borderRadius: BorderRadius.circular(radius),
       child: Container(
         padding: EdgeInsets.only(
@@ -39,7 +39,10 @@ class DefaultContainer extends StatelessWidget {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(radius),
-            border: Border.all(width: borderWidth)),
+            border: Border.all(
+              width: borderWidth,
+              color: Colors.transparent,
+            )),
         child: child,
       ),
     );
