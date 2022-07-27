@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../components/appbar.dart';
-import '../../components/bottombar.dart';
+import '../components/appbar.dart';
+import '../components/bottombar.dart';
 
 class FeedScreen extends StatelessWidget {
   const FeedScreen({Key? key}) : super(key: key);

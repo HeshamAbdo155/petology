@@ -1,3 +1,4 @@
+import 'package:petology/model/login_model.dart';
 
 abstract class PetologyStates {}
 
@@ -5,56 +6,34 @@ class PetologyInitialState extends PetologyStates {}
 
 class AppBarState extends PetologyStates {}
 
-// class ShopSuccessHomeDataState extends PetologyStates {}
-//
-// class ShopErrorHomeDataState extends PetologyStates {
-//   final String error;
-//
-//   ShopErrorHomeDataState(this.error);
-// }
-//
-// class ShopSuccessCategoriesDataState extends PetologyStates {}
-//
-// class ShopErrorCategoriesDataState extends PetologyStates {
-//   final String error;
-//
-//   ShopErrorCategoriesDataState(this.error);
-// }
-//
-// class ShopChangeFavoritesState extends PetologyStates {}
-//
-// class ShopSuccessChangeFavoritesState extends PetologyStates {
-//   final ChangeFavoritesModel model;
-//
-//   ShopSuccessChangeFavoritesState(this.model);
-// }
-//
-// class ShopErrorChangeFavoritesState extends PetologyStates {}
-//
-// class ShopLoadingGetFavoritesState extends PetologyStates {}
-//
-// class ShopSuccessGetFavoritesState extends PetologyStates {}
-//
-// class ShopErrorGetFavoritesState extends PetologyStates {}
-//
-// class ShopLoadingUserDataState extends PetologyStates {}
-//
-// class ShopSuccessUserDataState extends PetologyStates {
-//   final ShopLoginModel loginModel;
-//
-//   ShopSuccessUserDataState(this.loginModel);
-// }
-//
-// class ShopErrorUserDataState extends PetologyStates {}
-//
-// class ShopLoadingUpdateUserState extends PetologyStates {}
-//
-// class ShopSuccessUpdateUserState extends PetologyStates {
-//   final ShopLoginModel loginModel;
-//
-//   ShopSuccessUpdateUserState(this.loginModel);
-// }
-//
-// class ShopErrorUpdateUserState extends PetologyStates {}
-//
-// class AppChangeThemeModeState extends PetologyStates {}
+class PetologyLoginSuccessState extends PetologyStates {
+  final LoginModel loginModel;
+
+  PetologyLoginSuccessState(this.loginModel);
+}
+
+class PetologyLoginErrorState extends PetologyStates {
+  final String error;
+
+  PetologyLoginErrorState(this.error);
+}
+class RegisterSuccessState extends PetologyStates {
+  final LoginModel loginModel;
+
+  RegisterSuccessState(this.loginModel);
+}
+
+class RegisterErrorState extends PetologyStates {
+  final String error;
+
+  RegisterErrorState(this.error);
+}
+class RequestGetSuccessState extends PetologyStates {
+  RequestGetSuccessState();
+}
+
+class RequestGetErrorState extends PetologyStates {
+  final String error;
+
+  RequestGetErrorState(this.error);
+}

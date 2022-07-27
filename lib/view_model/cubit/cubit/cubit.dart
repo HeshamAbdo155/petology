@@ -6,24 +6,102 @@ import 'package:petology/view/home/home_view.dart';
 import 'package:petology/view/request_view.dart';
 import 'package:petology/view_model/cubit/cubit/states.dart';
 
+import '../../../model/login_model.dart';
+import '../../../model/request_model.dart';
+import '../../network/endpoint.dart';
+import '../../network/remote/dio_helper.dart';
+
 class PetologyCubit extends Cubit<PetologyStates> {
   PetologyCubit() : super(PetologyInitialState());
 
   static PetologyCubit get(context) => BlocProvider.of(context);
 
+
+  LoginModel? loginModel;
+
+  void userLogin({
+    required String email,
+    required String password,
+  }) {
+    DioHelper.postData(
+      url: LOGIN,
+      data: {
+        'email': email,
+        'password': password,
+      },
+    ).then(
+      (value) {
+        loginModel = LoginModel.fromJson(value.data);
+        print(value.data);
+        emit(PetologyLoginSuccessState(loginModel!));
+      },
+    ).catchError(
+      (error) {
+        print(error.toString());
+        emit(PetologyLoginErrorState(error.toString()));
+      },
+    );
+  }
+
+  void userRegister({
+    required String firstName,
+    required String lastName,
+    required String email,
+    required String password,
+    required String country,
+    required String phoneNumber,
+  }) {
+    DioHelper.postData(
+      url: REGISTER,
+      data: {
+        'firstName': firstName,
+        'lastName': lastName,
+        'email': email,
+        'password': password,
+        'phoneNumber': phoneNumber,
+        'country': country,
+      },
+    ).then(
+      (value) {
+        loginModel = LoginModel.fromJson(value.data);
+        print(value.data);
+        emit(PetologyLoginSuccessState(loginModel!));
+      },
+    ).catchError(
+      (error) {
+        print(error.toString());
+        emit(PetologyLoginErrorState(error.toString()));
+      },
+    );
+  }
+
+  RequestModel? requestModel;
+
+  void getRequestData() {
+    DioHelper.getData(
+      url: REQUST,
+    ).then((value) {
+      requestModel = RequestModel.fromJson(value.data);
+      // print(value.data);
+      emit(RequestGetSuccessState());
+    }).catchError((error) {
+      print(error.toString());
+      emit(RegisterErrorState(error));
+    });
+  }
+
   int currentIndex = 0;
 
   List<Widget> screens = [
-     HomeScreen(),
-     RequestScreen(),
-     AdaptScreen(),
+    HomeScreen(),
+    RequestScreen(),
+    AdaptScreen(),
   ];
 
   void changeAppbarScreen(int index) {
     currentIndex = index;
     emit(AppBarState());
   }
-
 
 //   HomeModel? homeModel;
 //

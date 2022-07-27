@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:petology/components/components.dart';
-import 'package:petology/view/home/feed_view.dart';
+import 'package:petology/view/feed_view.dart';
 
 import '../components/dog_cat_card.dart';
 
