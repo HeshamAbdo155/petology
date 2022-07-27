@@ -15,6 +15,7 @@ class DefaultCard extends StatelessWidget {
     this.colorButtonBorder = Colors.transparent,
     this.bottomName,
     this.bottom = false,
+    required this.onPresss,
   }) : super(key: key);
 
   final String image;
@@ -28,6 +29,7 @@ class DefaultCard extends StatelessWidget {
   final Color colorButtonBorder;
   final String? bottomName;
   final bool bottom;
+  final VoidCallback onPresss;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +58,7 @@ class DefaultCard extends StatelessWidget {
           ),
           SizedBox(height: 20),
           DefaultButton(
-            onPress: () {},
+            onPress: onPresss,
             height: 62,
             width: 225,
             buttonColor: colorButton,

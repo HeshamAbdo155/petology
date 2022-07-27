@@ -54,6 +54,7 @@ class AdaptScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           DefaultCard(
+                            onPresss: (){},
                             name: 'Caty',
                             image: 'Caty',
                             colorCard: Color(0xffEAEAEA),
@@ -66,6 +67,7 @@ class AdaptScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 100.0),
                           DefaultCard(
+                            onPresss: (){},
                             name: 'Elsa',
                             image: 'Elsa',
                             colorCard: Color(0xffEAEAEA),
@@ -78,6 +80,7 @@ class AdaptScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 100.0),
                           DefaultCard(
+                            onPresss: (){},
                             name: 'Doby',
                             image: 'Doby',
                             colorCard: Color(0xffEAEAEA),
@@ -95,6 +98,7 @@ class AdaptScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           DefaultCard(
+                            onPresss: (){},
                             name: 'Caty',
                             image: 'Caty',
                             colorCard: Color(0xffEAEAEA),
@@ -107,6 +111,7 @@ class AdaptScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 100.0),
                           DefaultCard(
+                            onPresss: (){},
                             name: 'Elsa',
                             image: 'Elsa',
                             colorCard: Color(0xffEAEAEA),
@@ -119,6 +124,7 @@ class AdaptScreen extends StatelessWidget {
                           ),
                           SizedBox(width: 100.0),
                           DefaultCard(
+                            onPresss: (){},
                             name: 'Doby',
                             image: 'Doby',
                             colorCard: Color(0xffEAEAEA),

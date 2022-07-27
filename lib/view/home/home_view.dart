@@ -5,6 +5,8 @@ import 'package:petology/components/default_card.dart';
 import 'package:petology/components/dog_cat_card.dart';
 import 'package:petology/view/adapt_view.dart';
 import 'package:petology/view/cat_dog_view.dart';
+import 'package:petology/view/details_view.dart';
+import 'package:petology/view/feed_view.dart';
 import 'package:petology/view/help_view.dart';
 import '../../components/bottombar.dart';
 import '../../components/circle_information.dart';
@@ -187,7 +189,12 @@ class HomeScreen extends StatelessWidget {
                               child: DogCatCard(
                                 image: 'dog',
                                 title: 'Dogs',
-                                onTap: () {},
+                                onTap: () {
+                                  navigateTo(
+                                    context,
+                                    AdaptScreen(),
+                                  );
+                                },
                               )),
                           SizedBox(width: 120.0),
                           DogCatCard(
@@ -240,6 +247,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             CircleArrow(icon: Icons.arrow_back_ios_rounded),
                             DefaultCard(
+                              onPresss: () {},
                               name: 'Caty',
                               image: 'Caty',
                               colorBorder: Color(0xff492F24),
@@ -248,6 +256,12 @@ class HomeScreen extends StatelessWidget {
                             ),
                             SizedBox(width: 80.0),
                             DefaultCard(
+                              onPresss: () {
+                                navigateTo(
+                                  context,
+                                  DetailsScreen(),
+                                );
+                              },
                               name: 'Elsa',
                               image: 'Elsa',
                               colorBorder: Color(0xff492F24),
@@ -256,6 +270,7 @@ class HomeScreen extends StatelessWidget {
                             ),
                             SizedBox(width: 80.0),
                             DefaultCard(
+                              onPresss: () {},
                               name: 'Doby',
                               image: 'Doby',
                               colorBorder: Color(0xff492F24),
@@ -338,20 +353,29 @@ class HomeScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   CircleInformation(
+                                    onpress: () {
+                                      navigateTo(
+                                        context,
+                                        FeedScreen(),
+                                      );
+                                    },
                                     title: 'Pet food',
                                     image: 'Group 75', //45 padding
                                   ),
                                   CircleInformation(
+                                    onpress: () {},
                                     image: 'transportation',
                                     title: 'Transportation',
                                     leftPadding: 15.0,
                                   ),
                                   CircleInformation(
+                                    onpress: () {},
                                     image: 'toys',
                                     title: 'Toys',
                                     leftPadding: 40.0,
                                   ),
                                   CircleInformation(
+                                    onpress: () {},
                                     image: 'bowl',
                                     title: 'Bowls and Cups',
                                     leftPadding: 10.0,
@@ -364,16 +388,19 @@ class HomeScreen extends StatelessWidget {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   CircleInformation(
+                                    onpress: () {},
                                     image: 'Inoculation',
                                     title: 'Inoculation',
                                     leftPadding: 35.0,
                                   ),
                                   CircleInformation(
+                                    onpress: () {},
                                     image: 'bed',
                                     title: 'Sleeping Area',
                                     leftPadding: 20.0,
                                   ),
                                   CircleInformation(
+                                    onpress: () {},
                                     image: 'vitamins',
                                     title: 'Vitamins',
                                     leftPadding: 45.0,

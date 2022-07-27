@@ -90,18 +90,16 @@ class PetologyCubit extends Cubit<PetologyStates> {
     });
   }
 
-  int currentIndex = 0;
+  int selectedIndex = 0;
 
-  List<Widget> screens = [
-    HomeScreen(),
-    RequestScreen(),
-    AdaptScreen(),
+
+  List<String> appBarList = [
+    'About us',
+    'Categories',
+    'Adaption',
+    'Request',
   ];
 
-  void changeAppbarScreen(int index) {
-    currentIndex = index;
-    emit(AppBarState());
-  }
 
 //   HomeModel? homeModel;
 //
